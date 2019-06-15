@@ -1,8 +1,8 @@
 # nginx Ingress Controller with Public IP 
 
-Assume you have a bare metal Kubernetes cluster on prem. One of the challenges is to make the pod available to public network. Most common and easy one is to use NodePort as well as upfront load balancer, which needs another layer of maintenance. Furthermore, as the nubmer of services grows, there will be performance issue related the iptables filter based mechanism. 
+Assume you have a bare metal Kubernetes cluster on prem. One of the challenges is to make the pod available to public network. Most common and easy solution is to use NodePort as well as upfront load balancer, which needs another layer of maintenance. Furthermore, as the nubmer of services grows, there will be performance issue related to the iptables filter constraints. 
 
-This repo provides a solution to implement [Nnginx Ingress controller](https://github.com/nginxinc/kubernetes-ingress) with [Multus-CNI](https://github.com/intel/multus-cni) so a public IP will be attached to the Ingress directly. Please refer to above two modules for better understanding of the tehnoclogies involved. Here I focus on more about how to set it up. 
+This repo provides a solution to implement [Nnginx Ingress controller](https://github.com/nginxinc/kubernetes-ingress) with [Multus-CNI](https://github.com/intel/multus-cni) so a public IP will be attached to the Ingress directly. Please refer to above two modules for better understanding of the detail technologies involved. Here I focus on more about how to set it up. 
 
 ## Install Multus-CNI
 
@@ -42,6 +42,9 @@ $ kubectl apply -f rbac.yaml
 
 $ kubectl apply -f nginx-ingress.yaml
 
-## ingress for an application 
+## You are good to go!!! 
+
+## Ingress for an application 
 ** Notes ** please update the doname name 'myapp.mydomain.com' and service name 'myapp' accordingly
+
 $ kubectl apply -f myapp-ingress.yaml
