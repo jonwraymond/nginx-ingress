@@ -1,4 +1,4 @@
-# nginx Ingress Controller with Public IP 
+# Nginx Ingress Controller with Public IP 
 
 Assume you have a bare metal Kubernetes cluster on prem. One of the challenges is to make the pod available to public network. Most common and easy solution is to use NodePort as well as upfront load balancer, which needs another layer of maintenance. Furthermore, as the nubmer of services grows, there will be performance issue related to the iptables filter constraints. 
 
