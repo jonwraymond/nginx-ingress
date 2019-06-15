@@ -1,0 +1,9 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: nginx-config
+  namespace: nginx-ingress
+data:
+  client-max-body-size: "2m"
+  ssl-protocols: "TLSv1.2"
+  ssl-ciphers: "HIGH:!aNULL:!MD5"
