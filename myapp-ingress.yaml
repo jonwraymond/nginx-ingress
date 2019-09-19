@@ -4,6 +4,9 @@ kind: Ingress
 metadata:
   name: myapp-ingress
 spec:
+  tls:
+  - hosts:
+    - myapp.mydomain.com
   rules:
   - host: myapp.mydomain.com
     http:
